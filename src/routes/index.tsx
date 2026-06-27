@@ -44,30 +44,39 @@ function Index() {
     {
       title: "Arijit Singh Radio",
       subtitle: "Arijit Singh • Pritam • Atif Aslam • Armaan Malik",
-      image: "https://picsum.photos/seed/radio1/500/500",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80",
     },
     {
       title: "Bollywood Love Radio",
       subtitle: "Arijit Singh • Jubin Nautiyal • Shreya Ghoshal",
-      image: "https://picsum.photos/seed/radio2/500/500",
+      image: "https://images.unsplash.com/photo-1618005174828-9430c5e7b233?auto=format&fit=crop&w=500&q=80",
     },
     {
       title: "Late Night Indie Radio",
       subtitle: "Prateek Kuhad • Anuv Jain • When Chai Met Toast",
-      image: "https://picsum.photos/seed/radio3/500/500",
+      image: "https://images.unsplash.com/photo-1618005156711-f254589d803d?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      title: "90s Bollywood Radio",
+      subtitle: "Udit Narayan • Kumar Sanu • Alka Yagnik • Lata Mangeshkar",
+      image: "https://images.unsplash.com/photo-1618005164821-2e6526190bd0?auto=format&fit=crop&w=500&q=80",
+    },
+    {
+      title: "Lo-fi India Radio",
+      subtitle: "Lofi Fruits Music • Silk Road Sounds • Indian Chill",
+      image: "https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&fit=crop&w=500&q=80",
     },
   ];
   const albums = [
-    { kind: "Single", title: "Kesariya", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album1/300/300" },
-    { kind: "Single", title: "Raataan Lambiyan", subtitle: "Jubin Nautiyal, Asees Kaur", image: "https://picsum.photos/seed/album2/300/300" },
-    { kind: "Single", title: "Tum Hi Ho", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album3/300/300" },
-    { kind: "Single", title: "Hawayein", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album4/300/300" },
-    { kind: "Single", title: "Apna Bana Le", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album5/300/300" },
-    { kind: "Single", title: "Heeriye", subtitle: "Arijit Singh, Jasleen Royal", image: "https://picsum.photos/seed/album6/300/300" },
-    { kind: "Single", title: "Kaise Hua", subtitle: "Vishal Mishra", image: "https://picsum.photos/seed/album7/300/300" },
-    { kind: "Single", title: "Satranga", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album8/300/300" },
-    { kind: "Album", title: "Pritam's Hits", subtitle: "Pritam", image: "https://picsum.photos/seed/album9/300/300" },
-    { kind: "Single", title: "Baarishein", subtitle: "Anuv Jain", image: "https://picsum.photos/seed/album10/300/300" },
+    { kind: "Single", title: "Channa Mereya", subtitle: "Arijit Singh", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Kesariya", subtitle: "Arijit Singh", image: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Raataan Lambiyan", subtitle: "Jubin Nautiyal", image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Apna Bana Le", subtitle: "Arijit Singh", image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Kaise Hua", subtitle: "Vishal Mishra", image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Heeriye", subtitle: "Jasleen Royal, Arijit Singh", image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Tum Hi Ho", subtitle: "Arijit Singh", image: "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Baarishein", subtitle: "Anuv Jain", image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=500&q=80" },
+    { kind: "Single", title: "Hawayein", subtitle: "Arijit Singh", image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=500&q=80" },
   ];
 
   return (
@@ -258,7 +267,7 @@ function Index() {
           <div className="mx-auto rounded-lg bg-[#3f3327] flex items-center gap-3 p-2 shadow-2xl">
             <div
               className="size-10 rounded-md shrink-0 flex items-center justify-center text-[9px] font-bold text-white/80"
-              style={{ backgroundImage: "url(https://picsum.photos/seed/miniplayer/200/200)", backgroundSize: "cover", backgroundPosition: "center" }}
+              style={{ backgroundImage: "url(https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80)", backgroundSize: "cover", backgroundPosition: "center" }}
             >
             </div>
             <div className="flex-1 min-w-0">
