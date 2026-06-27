@@ -16,7 +16,7 @@ export function DiscoveryLevelCard({
       type="button"
       onClick={onSelect}
       className={cn(
-        "w-full text-left rounded-2xl p-4 border transition-all duration-300 active:scale-[0.985]",
+        "w-full text-left rounded-2xl py-4 pl-4 pr-6 border transition-all duration-300 active:scale-[0.985]",
         "flex items-center gap-4",
         selected
           ? "border-primary bg-primary/8 shadow-[var(--shadow-green-glow)]"
@@ -35,10 +35,6 @@ export function DiscoveryLevelCard({
         <p className="text-base font-bold text-foreground">{config.label}</p>
         <p className="text-sm text-muted-foreground leading-snug mt-0.5">{config.description}</p>
       </div>
-      <div
-        className="size-14 rounded-xl shrink-0 shadow-md"
-        style={{ background: config.gradient }}
-      />
     </button>
   );
 }
