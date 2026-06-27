@@ -236,10 +236,6 @@ function Index() {
                   className="relative aspect-square rounded-md overflow-hidden shadow-lg"
                   style={{ backgroundImage: `url(${a.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
-                  <div className="absolute top-2 left-2 right-2 flex items-center justify-between text-[8px] font-bold text-white/80">
-                    <span className="px-1 bg-red-600 rounded-sm">PG</span>
-                    <span className="px-1 bg-black/40 rounded-sm">HD</span>
-                  </div>
                   <div className="absolute bottom-3 left-0 right-0 text-center">
                     <p className="text-white font-black text-[18px] tracking-wide drop-shadow-md truncate px-2">
                       {a.title}
