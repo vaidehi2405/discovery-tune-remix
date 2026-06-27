@@ -41,14 +41,33 @@ function Index() {
 
   const filters = ["All", "Music", "Following", "Podcasts"];
   const radios = [
-    { title: "Artist One", subtitle: "Artist One, Producer, Vocalist, Composer, Hi…", swatch: "#f5d28a" },
-    { title: "Artist Two", subtitle: "Collaborator, Featured, Artist Two, AP …", swatch: "#a8e7d8" },
-    { title: "Artist Three", subtitle: "Artist Three, Friends, Chith…", swatch: "#f1d35a" },
+    {
+      title: "Arijit Singh Radio",
+      subtitle: "Arijit Singh • Pritam • Atif Aslam • Armaan Malik",
+      image: "https://picsum.photos/seed/radio1/500/500",
+    },
+    {
+      title: "Bollywood Love Radio",
+      subtitle: "Arijit Singh • Jubin Nautiyal • Shreya Ghoshal",
+      image: "https://picsum.photos/seed/radio2/500/500",
+    },
+    {
+      title: "Late Night Indie Radio",
+      subtitle: "Prateek Kuhad • Anuv Jain • When Chai Met Toast",
+      image: "https://picsum.photos/seed/radio3/500/500",
+    },
   ];
   const albums = [
-    { kind: "Album", title: "Placeholder Album", subtitle: "Composer, Lyricist, J…", gradient: "linear-gradient(160deg,#0f172a,#334155 60%,#64748b)" },
-    { kind: "Album", title: "Placeholder OST (Original Motion Pictur…)", subtitle: "Composer, Sa…", gradient: "linear-gradient(160deg,#7f1d1d,#b45309 70%,#fde68a)" },
-    { kind: "Single", title: "Finding Light", subtitle: "Kush…", gradient: "linear-gradient(160deg,#0e7490,#86efac)" },
+    { kind: "Single", title: "Kesariya", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album1/300/300" },
+    { kind: "Single", title: "Raataan Lambiyan", subtitle: "Jubin Nautiyal, Asees Kaur", image: "https://picsum.photos/seed/album2/300/300" },
+    { kind: "Single", title: "Tum Hi Ho", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album3/300/300" },
+    { kind: "Single", title: "Hawayein", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album4/300/300" },
+    { kind: "Single", title: "Apna Bana Le", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album5/300/300" },
+    { kind: "Single", title: "Heeriye", subtitle: "Arijit Singh, Jasleen Royal", image: "https://picsum.photos/seed/album6/300/300" },
+    { kind: "Single", title: "Kaise Hua", subtitle: "Vishal Mishra", image: "https://picsum.photos/seed/album7/300/300" },
+    { kind: "Single", title: "Satranga", subtitle: "Arijit Singh", image: "https://picsum.photos/seed/album8/300/300" },
+    { kind: "Album", title: "Pritam's Hits", subtitle: "Pritam", image: "https://picsum.photos/seed/album9/300/300" },
+    { kind: "Single", title: "Baarishein", subtitle: "Anuv Jain", image: "https://picsum.photos/seed/album10/300/300" },
   ];
 
   return (
@@ -164,7 +183,7 @@ function Index() {
               <div key={r.title} className="w-[170px] shrink-0">
                 <div
                   className="relative aspect-square rounded-md overflow-hidden flex flex-col p-3"
-                  style={{ background: r.swatch }}
+                  style={{ backgroundImage: `url(${r.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
                   <div className="flex items-center justify-between text-[10px] font-bold text-black/80">
                     <span className="size-4 rounded-full bg-black/80 flex items-center justify-center">
@@ -206,15 +225,15 @@ function Index() {
               <div key={a.title} className="w-[170px] shrink-0">
                 <div
                   className="relative aspect-square rounded-md overflow-hidden shadow-lg"
-                  style={{ background: a.gradient }}
+                  style={{ backgroundImage: `url(${a.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
                   <div className="absolute top-2 left-2 right-2 flex items-center justify-between text-[8px] font-bold text-white/80">
                     <span className="px-1 bg-red-600 rounded-sm">PG</span>
                     <span className="px-1 bg-black/40 rounded-sm">HD</span>
                   </div>
                   <div className="absolute bottom-3 left-0 right-0 text-center">
-                    <p className="text-white font-black text-[18px] tracking-wide drop-shadow-md">
-                      PLACEHOLDER
+                    <p className="text-white font-black text-[18px] tracking-wide drop-shadow-md truncate px-2">
+                      {a.title}
                     </p>
                   </div>
                 </div>
@@ -239,13 +258,12 @@ function Index() {
           <div className="mx-auto rounded-lg bg-[#3f3327] flex items-center gap-3 p-2 shadow-2xl">
             <div
               className="size-10 rounded-md shrink-0 flex items-center justify-center text-[9px] font-bold text-white/80"
-              style={{ background: "linear-gradient(135deg,#7c3aed,#ec4899)" }}
+              style={{ backgroundImage: "url(https://picsum.photos/seed/miniplayer/200/200)", backgroundSize: "cover", backgroundPosition: "center" }}
             >
-              ART
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[13px] font-semibold text-foreground truncate">Placeholder Track</p>
-              <p className="text-[11px] text-muted-foreground truncate">Placeholder Artist</p>
+              <p className="text-[13px] font-semibold text-foreground truncate">Channa Mereya</p>
+              <p className="text-[11px] text-muted-foreground truncate">Arijit Singh</p>
             </div>
             <button className="text-foreground p-1" aria-label="Add">
               <Plus className="size-5" />
