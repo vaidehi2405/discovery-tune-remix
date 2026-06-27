@@ -114,7 +114,7 @@ function PlaylistPage() {
         <div className="px-5 pt-6 flex justify-center">
           <div
             className="relative size-56 rounded-2xl shadow-2xl flex flex-col justify-end p-5"
-            style={{ background: "var(--gradient-discover)" }}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=500&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
             <div className="text-white">
               <p className="text-[11px] font-semibold uppercase tracking-widest opacity-80">

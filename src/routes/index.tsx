@@ -61,7 +61,7 @@ function Index() {
       subtitle: "Udit Narayan • Kumar Sanu • Alka Yagnik • Lata Mangeshkar",
       image: "/radio image 4.png",
     },
-    
+
   ];
   const albums = [
     { kind: "Single", title: "Channa Mereya", subtitle: "Arijit Singh", image: "/channa mereya.jpg" },
