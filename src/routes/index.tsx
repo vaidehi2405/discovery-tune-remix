@@ -42,30 +42,26 @@ function Index() {
   const filters = ["All", "Music", "Following", "Podcasts"];
   const radios = [
     {
-      title: "Arijit Singh Radio",
+
       subtitle: "Arijit Singh • Pritam • Atif Aslam • Armaan Malik",
       image: "/radio image 1.png",
     },
     {
-      title: "Bollywood Love Radio",
+
       subtitle: "Arijit Singh • Jubin Nautiyal • Shreya Ghoshal",
       image: "/radio image 2.png",
     },
     {
-      title: "Late Night Indie Radio",
+
       subtitle: "Prateek Kuhad • Anuv Jain • When Chai Met Toast",
       image: "/radio image 3.png",
     },
     {
-      title: "90s Bollywood Radio",
+
       subtitle: "Udit Narayan • Kumar Sanu • Alka Yagnik • Lata Mangeshkar",
       image: "/radio image 4.png",
     },
-    {
-      title: "Lo-fi India Radio",
-      subtitle: "Lofi Fruits Music • Silk Road Sounds • Indian Chill",
-      image: "/radio image 1.png",
-    },
+    
   ];
   const albums = [
     { kind: "Single", title: "Channa Mereya", subtitle: "Arijit Singh", image: "/channa mereya.jpg" },
@@ -189,33 +185,11 @@ function Index() {
           </h3>
           <div className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1">
             {radios.map((r) => (
-              <div key={r.title} className="w-[170px] shrink-0">
+              <div key={r.image} className="w-[170px] shrink-0">
                 <div
                   className="relative aspect-square rounded-md overflow-hidden flex flex-col p-3"
                   style={{ backgroundImage: `url('${r.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
-                >
-                  <div className="flex items-center justify-between text-[10px] font-bold text-black/80">
-                    <span className="size-4 rounded-full bg-black/80 flex items-center justify-center">
-                      <span className="size-2 rounded-full bg-primary" />
-                    </span>
-                    <span className="tracking-widest">RADIO</span>
-                  </div>
-                  <div className="flex-1 flex items-center justify-center gap-1">
-                    {[0, 1, 2].map((i) => (
-                      <div
-                        key={i}
-                        className="size-10 rounded-full ring-2 ring-black/10"
-                        style={{
-                          background: `linear-gradient(135deg, hsl(${(i * 80 + 20) % 360} 50% 35%), hsl(${(i * 80 + 80) % 360} 50% 55%))`,
-                          transform: i === 1 ? "scale(1.4)" : "scale(1)",
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-[20px] font-extrabold text-black leading-none truncate">
-                    {r.title}
-                  </p>
-                </div>
+                />
                 <p className="text-[12px] text-muted-foreground mt-2 line-clamp-2 leading-snug">
                   {r.subtitle}
                 </p>
@@ -235,13 +209,7 @@ function Index() {
                 <div
                   className="relative aspect-square rounded-md overflow-hidden shadow-lg"
                   style={{ backgroundImage: `url('${a.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
-                >
-                  <div className="absolute bottom-3 left-0 right-0 text-center">
-                    <p className="text-white font-black text-[18px] tracking-wide drop-shadow-md truncate px-2">
-                      {a.title}
-                    </p>
-                  </div>
-                </div>
+                />
                 <p className="text-[12px] text-muted-foreground mt-2">{a.kind}</p>
                 <p className="text-[13px] font-bold text-foreground line-clamp-2 leading-tight">
                   {a.title}
