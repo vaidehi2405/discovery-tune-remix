@@ -66,7 +66,8 @@ function fallback(level: DiscoveryLevel): { tracks: TrackOut[] } {
 }
 
 async function callLLM(body: ReqBody): Promise<{ tracks: TrackOut[] } | null> {
-  const key = process.env.GROK_API_KEY || process.env.XAI_API_KEY;
+  const key = process.env.GROQ_API_KEY;
+  console.log("Groq API key status:", key ? "Defined" : "Undefined");
   if (!key) return null;
   const prompt = `You are powering a Spotify-style Discover Weekly prototype.
 
@@ -87,19 +88,22 @@ Rules:
 {"tracks":[{"id":"1","name":"","artist":"","album":"","image":"","reason":""}]}`;
 
   try {
-    const res = await fetch("https://api.x.ai/v1/chat/completions", {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${key}`,
       },
       body: JSON.stringify({
-        model: "grok-2-1212",
+        model: "llama-3.3-70b-versatile",
         messages: [{ role: "user", content: prompt }],
         response_format: { type: "json_object" },
       }),
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error("Groq API response not OK:", res.status);
+      return null;
+    }
     const data = await res.json();
     const content = data?.choices?.[0]?.message?.content;
     if (!content) return null;
@@ -118,7 +122,8 @@ Rules:
       };
     });
     return { tracks: normalized };
-  } catch {
+  } catch (error) {
+    console.error("Groq API call caught error:", error);
     return null;
   }
 }
