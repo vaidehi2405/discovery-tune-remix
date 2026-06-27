@@ -192,7 +192,7 @@ function Index() {
               <div key={r.title} className="w-[170px] shrink-0">
                 <div
                   className="relative aspect-square rounded-md overflow-hidden flex flex-col p-3"
-                  style={{ backgroundImage: `url(${r.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  style={{ backgroundImage: `url('${r.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
                   <div className="flex items-center justify-between text-[10px] font-bold text-black/80">
                     <span className="size-4 rounded-full bg-black/80 flex items-center justify-center">
@@ -234,7 +234,7 @@ function Index() {
               <div key={a.title} className="w-[170px] shrink-0">
                 <div
                   className="relative aspect-square rounded-md overflow-hidden shadow-lg"
-                  style={{ backgroundImage: `url(${a.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  style={{ backgroundImage: `url('${a.image}')`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
                   <div className="absolute bottom-3 left-0 right-0 text-center">
                     <p className="text-white font-black text-[18px] tracking-wide drop-shadow-md truncate px-2">
