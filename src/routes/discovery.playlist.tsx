@@ -113,10 +113,25 @@ function PlaylistPage() {
         {/* Cover */}
         <div className="px-5 pt-6 flex justify-center">
           <div
-            className="relative size-56 rounded-2xl shadow-2xl flex flex-col justify-end p-5"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=500&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+            className="relative size-56 rounded-2xl shadow-2xl flex flex-col justify-end p-5 overflow-hidden"
+            style={{
+              background: "radial-gradient(circle at 90% 50%, rgba(217, 122, 184, 0.3) 0%, transparent 60%), radial-gradient(circle at top right, rgba(217, 122, 184, 0.4) 0%, transparent 60%), linear-gradient(135deg, #0d1130 0%, #2f255e 35%, #4a3b87 65%, #8d5aae 85%, #d97ab8 100%)"
+            }}
           >
-            <div className="text-white">
+            {/* Subtle Wave Graphics */}
+            <svg
+              className="absolute bottom-0 left-0 w-full h-[55%] pointer-events-none opacity-60"
+              viewBox="0 0 1440 320"
+              preserveAspectRatio="none"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0,224 C240,160 480,160 720,224 C960,288 1200,288 1440,224 L1440,320 L0,320 Z" fill="#2F255E" opacity="0.5" />
+              <path d="M0,192 C180,256 360,256 540,192 C720,128 900,128 1080,192 C1260,256 1440,192 1440,192 L1440,320 L0,320 Z" fill="#4A3B87" opacity="0.4" />
+              <path d="M0,256 C360,160 720,320 1080,224 C1260,176 1380,208 1440,224 L1440,320 L0,320 Z" fill="#8D5AAE" opacity="0.3" />
+            </svg>
+
+            <div className="relative text-white z-10">
               <p className="text-[11px] font-semibold uppercase tracking-widest opacity-80">
                 Made for You
               </p>
