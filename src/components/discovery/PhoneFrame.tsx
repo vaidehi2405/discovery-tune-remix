@@ -1,8 +1,8 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-const PHONE_W = 450;
-const PHONE_H = 973;
+const PHONE_W = 480;
+const PHONE_H = 1038;
 
 /**
  * Renders the app inside a realistic iPhone (Dynamic Island) frame.
