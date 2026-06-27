@@ -66,7 +66,7 @@ function fallback(level: DiscoveryLevel): { tracks: TrackOut[] } {
 }
 
 async function callLLM(body: ReqBody): Promise<{ tracks: TrackOut[] } | null> {
-  const key = process.env.LOVABLE_API_KEY;
+  const key = process.env.GROK_API_KEY || process.env.XAI_API_KEY;
   if (!key) return null;
   const prompt = `You are powering a Spotify-style Discover Weekly prototype.
 
@@ -87,15 +87,14 @@ Rules:
 {"tracks":[{"id":"1","name":"","artist":"","album":"","image":"","reason":""}]}`;
 
   try {
-    const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    const res = await fetch("https://api.x.ai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Lovable-API-Key": key,
-        "X-Lovable-AIG-SDK": "vercel-ai-sdk",
+        "Authorization": `Bearer ${key}`,
       },
       body: JSON.stringify({
-        model: "google/gemini-3-flash-preview",
+        model: "grok-2-1212",
         messages: [{ role: "user", content: prompt }],
         response_format: { type: "json_object" },
       }),
