@@ -122,7 +122,7 @@ function Index() {
           <Link
             to={dwTarget}
             className="group block relative rounded-2xl overflow-hidden active:scale-[0.99] transition-transform"
-            style={{ background: "var(--gradient-discover)" }}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=500&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
           >
             <div className="absolute -top-10 -right-10 size-40 rounded-full bg-white/15 blur-2xl" />
             <div className="absolute -bottom-12 -left-8 size-40 rounded-full bg-black/30 blur-2xl" />
