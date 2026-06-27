@@ -44,39 +44,39 @@ function Index() {
     {
       title: "Arijit Singh Radio",
       subtitle: "Arijit Singh • Pritam • Atif Aslam • Armaan Malik",
-      image: "/images/radio image 1.png",
+      image: "/radio image 1.png",
     },
     {
       title: "Bollywood Love Radio",
       subtitle: "Arijit Singh • Jubin Nautiyal • Shreya Ghoshal",
-      image: "/images/radio image 2.png",
+      image: "/radio image 2.png",
     },
     {
       title: "Late Night Indie Radio",
       subtitle: "Prateek Kuhad • Anuv Jain • When Chai Met Toast",
-      image: "/images/radio image 3.png",
+      image: "/radio image 3.png",
     },
     {
       title: "90s Bollywood Radio",
       subtitle: "Udit Narayan • Kumar Sanu • Alka Yagnik • Lata Mangeshkar",
-      image: "/images/radio image 4.png",
+      image: "/radio image 4.png",
     },
     {
       title: "Lo-fi India Radio",
       subtitle: "Lofi Fruits Music • Silk Road Sounds • Indian Chill",
-      image: "/images/radio image 1.png",
+      image: "/radio image 1.png",
     },
   ];
   const albums = [
-    { kind: "Single", title: "Channa Mereya", subtitle: "Arijit Singh", image: "/images/channa mereya.jpg" },
-    { kind: "Single", title: "Kesariya", subtitle: "Arijit Singh", image: "/images/kesariya.jpg" },
-    { kind: "Single", title: "Raataan Lambiyan", subtitle: "Jubin Nautiyal", image: "/images/raata lambiya.jpg" },
-    { kind: "Single", title: "Apna Bana Le", subtitle: "Arijit Singh", image: "/images/apna bana le.jpg" },
-    { kind: "Single", title: "Kaise Hua", subtitle: "Vishal Mishra", image: "/images/kaise hua.jpg" },
-    { kind: "Single", title: "Heeriye", subtitle: "Jasleen Royal, Arijit Singh", image: "/images/heeriye.jpg" },
-    { kind: "Single", title: "Tum Hi Ho", subtitle: "Arijit Singh", image: "/images/tum hi ho.jpg" },
-    { kind: "Single", title: "Baarishein", subtitle: "Anuv Jain", image: "/images/baarishien.jpg" },
-    { kind: "Single", title: "Hawayein", subtitle: "Arijit Singh", image: "/images/hawayein.jpg" },
+    { kind: "Single", title: "Channa Mereya", subtitle: "Arijit Singh", image: "/channa mereya.jpg" },
+    { kind: "Single", title: "Kesariya", subtitle: "Arijit Singh", image: "/kesariya.jpg" },
+    { kind: "Single", title: "Raataan Lambiyan", subtitle: "Jubin Nautiyal", image: "/raata lambiya.jpg" },
+    { kind: "Single", title: "Apna Bana Le", subtitle: "Arijit Singh", image: "/apna bana le.jpg" },
+    { kind: "Single", title: "Kaise Hua", subtitle: "Vishal Mishra", image: "/kaise hua.jpg" },
+    { kind: "Single", title: "Heeriye", subtitle: "Jasleen Royal, Arijit Singh", image: "/heeriye.jpg" },
+    { kind: "Single", title: "Tum Hi Ho", subtitle: "Arijit Singh", image: "/tum hi ho.jpg" },
+    { kind: "Single", title: "Baarishein", subtitle: "Anuv Jain", image: "/baarishien.jpg" },
+    { kind: "Single", title: "Hawayein", subtitle: "Arijit Singh", image: "/hawayein.jpg" },
   ];
 
   return (
@@ -263,7 +263,7 @@ function Index() {
           <div className="mx-auto rounded-lg bg-[#3f3327] flex items-center gap-3 p-2 shadow-2xl">
             <div
               className="size-10 rounded-md shrink-0 flex items-center justify-center text-[9px] font-bold text-white/80"
-              style={{ backgroundImage: "url('/images/channa mereya.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              style={{ backgroundImage: "url('/channa mereya.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
             >
             </div>
             <div className="flex-1 min-w-0">
