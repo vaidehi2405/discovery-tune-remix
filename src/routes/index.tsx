@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Search, Library, Home, Play, Plus, Sparkles, ChevronRight, Star } from "lucide-react";
 import { PhoneFrame } from "@/components/discovery/PhoneFrame";
 import { VaultSheet } from "@/components/discovery/VaultSheet";
+import { CoachMark } from "@/components/discovery/CoachMark";
 import { markNavigated } from "@/lib/nav-flag";
+import { useWalkthrough, walkthroughNext, walkthroughSkip } from "@/lib/walkthrough";
 import {
   useDiscoveryLevel,
   useHasGenerated,
@@ -35,6 +37,14 @@ function Index() {
   const hasGenerated = useHasGenerated();
   const vault = useVault();
   const [vaultOpen, setVaultOpen] = useState(false);
+  const navigate = useNavigate();
+  const wt = useWalkthrough();
+  const isStep1 = wt.active && wt.step === 1;
+
+  const handleWtNext = () => {
+    walkthroughNext();
+    navigate({ to: "/discovery/level" });
+  };
 
   const levelLabel = DISCOVERY_LEVELS[level].label;
   const dwTarget = hasGenerated ? "/discovery/playlist" : "/discovery/level";
@@ -121,7 +131,7 @@ function Index() {
 
           <Link
             to={dwTarget}
-            className="group block relative rounded-2xl overflow-hidden active:scale-[0.99] transition-transform"
+            className={"group block relative rounded-2xl overflow-hidden active:scale-[0.99] transition-transform" + (isStep1 ? " relative z-[85] ring-2 ring-primary/60 shadow-[0_0_24px_rgba(29,185,84,0.25)]" : "")}
             style={{
               background: "radial-gradient(circle at 90% 50%, rgba(217, 122, 184, 0.3) 0%, transparent 60%), radial-gradient(circle at top right, rgba(217, 122, 184, 0.4) 0%, transparent 60%), linear-gradient(135deg, #0d1130 0%, #2f255e 35%, #4a3b87 65%, #8d5aae 85%, #d97ab8 100%)"
             }}
@@ -290,6 +300,19 @@ function Index() {
       </div>
 
       <VaultSheet open={vaultOpen} onClose={() => setVaultOpen(false)} />
+
+      {/* Walkthrough Step 1/4 */}
+      <CoachMark
+        show={isStep1}
+        step={1}
+        totalSteps={4}
+        title="Try Discovery Control"
+        body="Tap Discover Weekly to choose how familiar or exploratory this week's recommendations should feel."
+        cta="Next"
+        onNext={handleWtNext}
+        onSkip={walkthroughSkip}
+        position="below"
+      />
     </PhoneFrame>
   );
 }

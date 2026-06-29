@@ -9,6 +9,7 @@ import { SuccessCard } from "@/components/discovery/SuccessCard";
 import { TrackActionsSheet } from "@/components/discovery/TrackActionsSheet";
 import { AddToPlaylistSheet } from "@/components/discovery/AddToPlaylistSheet";
 import { InPhoneToast } from "@/components/discovery/InPhoneToast";
+import { CoachMark } from "@/components/discovery/CoachMark";
 import {
   markGenerated,
   toggleVault,
@@ -18,6 +19,7 @@ import {
 } from "@/hooks/useDiscoveryStore";
 import { generatePlaylist, submitFeedback } from "@/services/discovery";
 import { hasClientNavigated } from "@/lib/nav-flag";
+import { useWalkthrough, walkthroughFinish, walkthroughSkip, walkthroughBack } from "@/lib/walkthrough";
 import type { FeedbackPayload, Track } from "@/types/discovery";
 
 export const Route = createFileRoute("/discovery/playlist")({
@@ -52,6 +54,18 @@ function PlaylistPage() {
   const [addTrack, setAddTrack] = useState<Track | null>(null);
   const [likedIds, setLikedIds] = useState<Set<string>>(() => new Set());
   const [toast, setToast] = useState<string | null>(null);
+  const [toastSub, setToastSub] = useState<string | null>(null);
+
+  const wt = useWalkthrough();
+  const isStep4 = wt.active && wt.step === 4;
+
+  // Auto-open More menu for the first track during walkthrough step 4
+  useEffect(() => {
+    if (isStep4 && tracks.length > 0 && !moreTrack) {
+      const timer = setTimeout(() => setMoreTrack(tracks[0]), 400);
+      return () => clearTimeout(timer);
+    }
+  }, [isStep4, tracks, moreTrack]);
 
   // Mark generated once user reaches the playlist screen so subsequent
   // visits skip the level picker.
@@ -71,6 +85,11 @@ function PlaylistPage() {
     const nowSaved = toggleVault(t.id);
     setMoreTrack(null);
     setToast(nowSaved ? "Saved to Discovery Vault" : "Removed from Discovery Vault");
+    if (nowSaved) {
+      setToastSub("For songs you want to revisit later.");
+    } else {
+      setToastSub(null);
+    }
   };
 
   const handleAddToPlaylist = (name: string) => {
@@ -263,10 +282,24 @@ function PlaylistPage() {
         onClose={() => setAddTrack(null)}
         onSelect={handleAddToPlaylist}
       />
-      <InPhoneToast message={toast} onDone={() => setToast(null)} />
+      <InPhoneToast message={toast} subtext={toastSub} onDone={() => { setToast(null); setToastSub(null); }} />
       {showSuccess && (
         <SuccessCard level={level} onContinue={() => setShowSuccess(false)} />
       )}
+
+      {/* Walkthrough Step 4/4 */}
+      <CoachMark
+        show={isStep4}
+        step={4}
+        totalSteps={4}
+        title="Shape future recommendations"
+        body="Like, save to Vault, add to playlist, or dislike — each action teaches Spotify what worked and what missed."
+        cta="Finish"
+        onNext={() => { setMoreTrack(null); walkthroughFinish(); }}
+        onSkip={() => { setMoreTrack(null); walkthroughSkip(); }}
+        onBack={() => { setMoreTrack(null); walkthroughBack(); navigate({ to: "/discovery/level" }); }}
+        position="above"
+      />
     </PhoneFrame>
   );
 }
